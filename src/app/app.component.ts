@@ -37,4 +37,10 @@ export class AppComponent {
       console.log(this.todoList[i].done);
     }
   }
+  submit() {
+    console.log("Submits To Api with this data:  ");
+    for (let i = 0; i < this.todoList.length; i++) {
+      console.log(this.todoList[i]);
+    }
+  }
 }
