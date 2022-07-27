@@ -3,6 +3,14 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
+  <p>
+    {{content}}
+  </p>
   <p *ngIf="content"></p>
   <input type="text" [(ngModel)]="content" />
+  <button>Enter</button>
+</div>
+<div *ngFor="let todo of todoList; let indexOfelement=index;">
+  <span>{{todo.content}}</span>
+  <input type="checkbox" (click)="toDone(indexOfelement)" />
 </div>

@@ -6,8 +6,17 @@ import { ToDo } from "../app/todo.model";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  title = "CodeSandbox";
-  todoList: ToDo[] = [];
+  title = "Todo List";
+  todoList: ToDo[] = [
+    {
+      content: "Hello World",
+      done: false
+    },
+    {
+      content: "Hello World2",
+      done: false
+    }
+  ];
   content: any;
   done: boolean;
 
@@ -22,8 +31,10 @@ export class AppComponent {
   toDone(i) {
     if (this.todoList[i].done === false) {
       this.todoList[i].done = true;
+      console.log(this.todoList[i].done);
     } else {
       this.todoList[i].done = false;
+      console.log(this.todoList[i].done);
     }
   }
 }
