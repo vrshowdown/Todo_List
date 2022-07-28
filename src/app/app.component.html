@@ -4,21 +4,42 @@
     Welcome to {{ title }}!
   </h1>
 </div>
-
 <div>
-  <div *ngIf="content">
-    {{content}}
+  <div style="width: 450px;">
+    <div
+      style="
+        position: relative;
+        float: left;
+        background-color: rgb(216, 216, 216);
+        padding: 20px;
+        border-radius: 10px;
+      "
+    >
+      <div *ngIf="content">
+        {{content}}
+      </div>
+      <input type="text" [(ngModel)]="content" />
+      <button (click)="update(content)">Enter</button>
+      <p>
+        <button (click)="submit()">
+          To submit (Display data in the console)
+        </button>
+      </p>
+    </div>
+
+    <div
+      style="
+        position: relative;
+        float: right;
+        background-color: gold;
+        padding: 20px;
+        border-radius: 10px;
+      "
+    >
+      <div *ngFor="let todo of todoList; let indexOfelement=index;">
+        <span>{{todo.content}}</span>
+        <input type="checkbox" (click)="toDone(indexOfelement)" />
+      </div>
+    </div>
   </div>
-  <input type="text" [(ngModel)]="content" />
-  <button (click)="update(content)">Enter</button>
-</div>
-
-<div *ngFor="let todo of todoList; let indexOfelement=index;">
-  <span>{{todo.content}}</span>
-  <input type="checkbox" (click)="toDone(indexOfelement)" />
-</div>
-
-<div>
-  <button (click)="submit()">To submit to Api</button>
-  Will display Final Data in the console
 </div>
