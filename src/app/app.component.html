@@ -6,16 +6,8 @@
 </div>
 
 <section>
-  <div style="width: 450px; margin: 0 auto;">
-    <div
-      style="
-        position: relative;
-        float: left;
-        background-color: rgb(216, 216, 216);
-        padding: 20px;
-        border-radius: 10px;
-      "
-    >
+  <div id="wrapper">
+    <div id="submit-text">
       <div *ngIf="content">
         {{content}}
       </div>
@@ -27,15 +19,7 @@
         </button>
       </p>
     </div>
-    <div
-      style="
-        position: relative;
-        float: right;
-        background-color: gold;
-        padding: 20px;
-        border-radius: 10px;
-      "
-    >
+    <div id="todo-list">
       <div *ngFor="let todo of todoList; let indexOfelement=index;">
         <span>{{todo.content}}</span>
         <input type="checkbox" (click)="toDone(indexOfelement)" />
